@@ -1,0 +1,94 @@
+.footer {
+   background-color: #f8f8f8;
+   padding: 40px 0;
+   text-align: center;
+ }
+ 
+ .container {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   padding: 20px;
+ }
+ 
+ .column {
+   flex: 1;
+   min-width: 200px;
+   margin: 10px;
+   text-align: left;
+ }
+ 
+ /* Scoped heading styles */
+ .column h3 {
+   font-size: 18px;
+   margin-bottom: 10px;
+   color: #333;
+   font-weight: 600;
+ }
+ 
+ /* Scoped text styles */
+ .column p,
+ .column a {
+   color: #555;
+   font-size: 14px;
+   text-decoration: none;
+   display: block;
+   margin: 5px 0;
+ }
+ 
+ /* Hover effect for links */
+ .column a:hover {
+   color: #000;
+   font-weight: 500;
+ }
+ 
+ /* Social Media Icons */
+ .socialIcons {
+   display: flex;
+   gap: 10px;
+   margin-top: 10px;
+ }
+ 
+ .socialIcons svg {
+   font-size: 20px;
+   color: #333;
+   cursor: pointer;
+   transition: color 0.3s ease;
+ }
+ 
+ .socialIcons svg:hover {
+   color: #000;
+ }
+ 
+ /* Payment Section */
+ .paymentSection {
+   margin-top: 20px;
+   text-align: center;
+ }
+ 
+ .paymentSection p {
+   font-size: 14px;
+   color: #555;
+   margin-bottom: 10px;
+ }
+ 
+ .paymentIcons {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+ }
+ 
+ .paymentIcons img {
+   width: 50px;
+   height: auto;
+ }
+ 
+ /* Copyright Section */
+ .copyright {
+   background: #e0e0e0;
+   padding: 10px 0;
+   margin-top: 20px;
+   font-size: 14px;
+   color: #555;
+ }
+ 
