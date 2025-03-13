@@ -1,13 +1,15 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaTruck, FaUserCircle, FaHeart, FaShoppingBag, FaSearch, FaBars } from "react-icons/fa";
 import styles from "../styles/navbar.module.css";
-import { Poppins } from "next/font/google";
 
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
+
 
   return (
     <nav className={styles.navbar}>
@@ -26,7 +28,6 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div className={styles.mainNav}>
-        {/* Logo and Menu Button */}
         <div className={styles.logoMenuContainer}>
           <h1 className={styles.logo}>Mk Shopp</h1>
           <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
@@ -49,7 +50,11 @@ export default function Navbar() {
 
         {/* Icons */}
         <div className={styles.icons}>
-          <Link href="#"><FaUserCircle /> Log In</Link>
+          {/* Clicking Log In redirects to /auth */}
+          <button className={styles.loginButton} onClick={() => router.push("/auth")}>
+  <FaUserCircle /> Log In
+</button>
+
           <Link href="#"><FaHeart /></Link>
           <Link href="#" className={styles.cartIcon}>
             <FaShoppingBag />

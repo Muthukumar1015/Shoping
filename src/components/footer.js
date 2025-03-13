@@ -1,5 +1,4 @@
-"use client"; // Ensures it's a Client Component
-
+"use client"; 
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import styles from "../styles/footer.module.css";
@@ -69,7 +68,7 @@ export default function Footer() {
 
          {/* Copyright */}
          <div className={styles.copyright}>
-            <p>© 2025 by Sheroo Shopp</p>
+            <p>© 2025 by Mk Shopp</p>
          </div>
       </footer>
    );
