@@ -151,6 +151,8 @@
   text-decoration: underline;
 }
 
+
+
 /* Responsive Design for All Devices */
 @media (max-width: 1024px) {
   .mainNav {

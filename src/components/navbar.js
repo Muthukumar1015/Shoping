@@ -75,7 +75,7 @@ export default function Navbar() {
       {/* Categories (Desktop View) */}
       <div className={styles.categoriesDesktop}>
         {["Shop All", "Computers", "Tablets", "Drones & Cameras", "Audio", "Mobile", "TV & Home Cinema", "Wearable Tech", "Sale"].map((item, index) => (
-          <Link key={index} href="#" className={styles.categoryItem}>{item}</Link>
+          <Link key={index} href="/shop" className={styles.categoryItem}>{item}</Link>
         ))}
       </div>
     </nav>

@@ -34,6 +34,7 @@
   background: #4a90e2;
   color: white;
   text-align: center;
+
 }
 
 /* Form Section */
@@ -127,4 +128,5 @@
 .switchButton.active {
   background: #4a90e2;
   color: white;
+  
 }
