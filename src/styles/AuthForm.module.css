@@ -7,28 +7,31 @@
   height: 100vh;
   background: #f5f5f5;
   padding: 20px;
+  overflow: hidden; /* Prevents unwanted scroll */
 }
 
 /* Auth Box */
 .authBox {
   position: relative;
   width: 700px;
-  max-width: 90%;
+  max-width: 100%;
   height: 400px;
   background: white;
   display: flex;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Panels */
+/* Panels (Side-by-Side) */
 .welcomeSection, .formSection {
   width: 50%;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -36,12 +39,11 @@
 .welcomeSection {
   background: #4a90e2;
   color: white;
-  text-align: center;
 }
 
 /* Form Section */
 .formSection {
-  text-align: center;
+  background: white;
 }
 
 /* Sliding Effect */
@@ -108,7 +110,7 @@
   background: #eee;
 }
 
-/* Separate Login/Register Buttons */
+/* Toggle Buttons */
 .switchButtons {
   margin-top: 20px;
   display: flex;
@@ -132,29 +134,40 @@
   color: white;
 }
 
-/* 📱 Mobile (≤ 768px) */
+/* 📱 Mobile Responsive (Sliding Effect Remains) */
 @media (max-width: 768px) {
   .authBox {
-    flex-direction: column;
-    height: auto;
-    max-width: 100%;
+    width: 95%;
+    height: 450px; /* Increased height for better input visibility */
   }
-  
+
   .welcomeSection, .formSection {
-    width: 100%;
+    width: 100%; /* Keep side-by-side */
     padding: 30px;
-    text-align: center;
   }
-  
-  /* Stacked form layout */
-  .loginMode .welcomeSection,
-  .registerMode .formSection {
-    transform: translateY(0%);
+
+  /* Smooth sliding effect on mobile */
+  .loginMode .welcomeSection {
+    transform: translateX(0%);
   }
-  
-  .registerMode .welcomeSection,
   .loginMode .formSection {
-    transform: translateY(100%);
+    transform: translateX(0%);
+  }
+  .registerMode .welcomeSection {
+    transform: translateX(100%);
+  }
+  .registerMode .formSection {
+    transform: translateX(-100%);
+  }
+
+  .inputField {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .primaryButton, .switchButton {
+    font-size: 14px;
+    padding: 8px;
   }
 }
 
@@ -162,11 +175,26 @@
 @media (max-width: 480px) {
   .authBox {
     width: 100%;
-    padding: 15px;
+    height: 500px; /* Adjust for better layout */
   }
-  
+
   .welcomeSection, .formSection {
+    width: 100%; /* Full width */
     padding: 20px;
+  }
+
+  /* Adjust sliding effect */
+  .loginMode .welcomeSection {
+    transform: translateX(0%);
+  }
+  .loginMode .formSection {
+    transform: translateX(0%);
+  }
+  .registerMode .welcomeSection {
+    transform: translateX(100%);
+  }
+  .registerMode .formSection {
+    transform: translateX(-100%);
   }
 
   .inputField {
