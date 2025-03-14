@@ -22,11 +22,11 @@ export default function Home() {
       >
          <Hero /> {/* Hero Section */}
          {/* Login Button */}
-         <button onClick={() => setShowAuth(true)}>Login</button>
+         
          {/* Show AuthForm Only When Clicked */}
          {showAuth && <AuthForm />}
          {/* Shop Button */}
-         <button onClick={() => setShowShop(true)}>Go to Shop</button>
+        
          {/* Show Shop Only When Clicked */}
          {showShop && <Shop />}
       </main>
