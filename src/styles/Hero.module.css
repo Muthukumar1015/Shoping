@@ -1,864 +1,941 @@
 /* Hero Section */
 .heroSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
 }
 
 /* Hero Banner */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
+   position: relative;
+   width: 100%;
+   height: 80vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-size: cover;
+   background-position: center;
+   transition: background-image 1s ease-in-out;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
 }
 
 .content {
-  position: relative;
-  max-width: 600px;
-  text-align: center;
-  color: white;
-  z-index: 1;
+   position: relative;
+   max-width: 600px;
+   text-align: center;
+   color: white;
+   z-index: 1;
 }
 
 .content h1 {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 20px 0;
+   font-size: 40px;
+   font-weight: bold;
+   margin: 20px 0;
 }
 
 .content p {
-  font-size: 18px;
-  color: #ddd;
+   font-size: 18px;
+   color: #ddd;
 }
 
 .badge {
-  background-color: red;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-size: 14px;
+   background-color: red;
+   color: white;
+   padding: 8px 15px;
+   border-radius: 5px;
+   font-size: 14px;
 }
 
 .shopButton {
-  background-color: #6c36ff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+   background-color: #6c36ff;
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   font-size: 16px;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: 0.3s;
 }
 
 .shopButton:hover {
-  background-color: #5a2ee8;
+   background-color: #5a2ee8;
 }
 
 /* Promotional Cards */
 .cardsContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: -50px;
-  width: 90%;
-  max-width: 1200px;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin-top: -50px;
+   width: 90%;
+   max-width: 1200px;
 }
 
 .card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 45%;
-  padding: 30px;
-  border-radius: 10px;
-  color: white;
-  position: relative;
-  overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 45%;
+   padding: 30px;
+   border-radius: 10px;
+   color: white;
+   position: relative;
+   overflow: hidden;
 }
 
 .cardContent {
-  max-width: 60%;
+   max-width: 60%;
 }
 
 .cardContent h2 {
-  font-size: 28px;
-  margin: 10px 0;
+   font-size: 28px;
+   margin: 10px 0;
 }
 
 .cardButton {
-  background: white;
-  color: black;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+   background: white;
+   color: black;
+   padding: 10px 20px;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10px;
 }
 
 .cardButton:hover {
-  background: #ddd;
+   background: #ddd;
 }
 
 .cardImage {
-  width: 300px;
-  height: auto;
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
+   width: 300px;
+   height: auto;
+   position: absolute;
+   right: 20px;
+   bottom: 10px;
 }
 
 /* Features Section */
 .featuresContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 50px;
-  padding: 20px;
-  background: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
+   max-width: 1200px;
+   margin-top: 50px;
+   padding: 20px;
+   background: #f8f8f8;
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .featureItem {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+   display: flex;
+   align-items: center;
+   gap: 15px;
 }
 
 .icon {
-  font-size: 30px;
-  color: #6c36ff;
+   font-size: 30px;
+   color: #6c36ff;
 }
 
 .featureItem h3 {
-  font-size: 18px;
-  margin: 0;
+   font-size: 18px;
+   margin: 0;
 }
 
 .featureItem p {
-  font-size: 14px;
-  color: #666;
+   font-size: 14px;
+   color: #666;
 }
 
 /* Best Sellers Section */
 .bestSellersSection {
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 50px;
-  text-align: center;
+   width: 100%;
+   max-width: 1200px;
+   margin-top: 50px;
+   text-align: center;
 }
 
 .sectionTitle {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+   font-size: 28px;
+   font-weight: bold;
+   margin-bottom: 20px;
 }
 
 .carousel {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   overflow-x: auto;
+   padding-bottom: 20px;
 }
 
 .productCard {
-  width: 220px;
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  position: relative;
+   width: 220px;
+   background: white;
+   border-radius: 10px;
+   padding: 15px;
+   text-align: center;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s;
+   position: relative;
 }
 
 .productCard:hover {
-  transform: translateY(-5px);
+   transform: translateY(-5px);
 }
 
 .saleBadge {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+   background-color: red;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 12px;
+   position: absolute;
+   top: 10px;
+   left: 10px;
 }
 
 .productImage {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
+   width: 100%;
+   height: 150px;
+   object-fit: contain;
 }
 
 .productTitle {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0;
+   font-size: 16px;
+   font-weight: bold;
+   margin: 10px 0;
 }
 
 .productPrice {
-  font-size: 18px;
-  font-weight: bold;
-  color: #6c36ff;
+   font-size: 18px;
+   font-weight: bold;
+   color: #6c36ff;
 }
 
 .oldPrice {
-  text-decoration: line-through;
-  color: #888;
-  margin-right: 5px;
+   text-decoration: line-through;
+   color: #888;
+   margin-right: 5px;
 }
 
 /* View All Button */
 .viewAllButton {
-  display: block;
-  margin: 20px auto;
-  background-color: #422398;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+   display: block;
+   margin: 20px auto;
+   background-color: #422398;
+   color: white;
+   padding: 12px 20px;
+   font-size: 16px;
+   border-radius: 20px;
+   border: none;
+   cursor: pointer;
+   transition: 0.3s;
 }
 
 .viewAllButton:hover {
-  background-color: #5a2ee8;
+   background-color: #5a2ee8;
 }
 
 /* Categories Section */
 .categoriesSection {
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 50px;
-  text-align: center;
+   width: 100%;
+   max-width: 1200px;
+   margin-top: 50px;
+   text-align: center;
 }
 
 .categoriesGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr); /* 5 columns */
+   gap: 20px;
+   justify-content: center;
+   margin-top: 20px;
 }
 
 .categoryCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: white;
+   border-radius: 10px;
+   padding: 15px;
+   text-align: center;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   transition: transform 0.3s;
 }
 
 .categoryCard:hover {
-  transform: translateY(-5px);
+   transform: translateY(-5px);
 }
 
 .categoryImage {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%; /* Makes it circular */
-  border: 3px solid #ddd; /* Optional: Adds a light border */
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 50%; /* Makes it circular */
+   border: 3px solid #ddd; /* Optional: Adds a light border */
 }
 
 .categoryName {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
+   font-size: 16px;
+   font-weight: bold;
+   margin-top: 10px;
 }
 
 .promoBanner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f8f8;
-  padding: 40px;
-  border-radius: 10px;
-  margin-top: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #f8f8f8;
+   padding: 40px;
+   border-radius: 10px;
+   margin-top: 50px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .promoImageContainer {
-  position: relative;
-  width: 50%;
+   position: relative;
+   width: 50%;
 }
 
 .promoImage {
-  width: 100%;
-  border-radius: 10px;
+   width: 100%;
+   border-radius: 10px;
 }
 
 .bestPriceBadge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: red;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   background-color: red;
+   color: white;
+   font-size: 14px;
+   font-weight: bold;
+   padding: 8px 12px;
+   border-radius: 5px;
 }
 
 .promoContent {
-  max-width: 50%;
-  padding-left: 20px;
-  text-align: center;
+   max-width: 50%;
+   padding-left: 20px;
+   text-align: center;
 }
 
 .promoContent h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
+   font-size: 28px;
+   font-weight: bold;
+   margin-bottom: 10px;
 }
 
 .promoContent p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 15px;
+   font-size: 16px;
+   color: #555;
+   margin-bottom: 15px;
 }
 
 .promoButton {
-  background-color: #6c36ff;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+   background-color: #6c36ff;
+   color: white;
+   padding: 12px 20px;
+   font-size: 16px;
+   border-radius: 8px;
+   border: none;
+   cursor: pointer;
+   transition: 0.3s;
 }
 
 .promoButton:hover {
-  background-color: #5a2ee8;
+   background-color: #5a2ee8;
 }
 
 .onSaleSection {
-  margin: 40px 0;
-  text-align: center;
+   margin: 40px 0;
+   text-align: center;
 }
 
 .sectionTitle {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+   font-size: 2rem;
+   margin-bottom: 20px;
+   color: #333;
 }
 
 .saleGrid {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-  overflow-x: auto;
-  padding: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #6c36ff transparent;
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   margin: 20px 0;
+   overflow-x: auto;
+   padding: 10px;
+   scrollbar-width: thin;
+   scrollbar-color: #6c36ff transparent;
 }
 
 .saleGrid::-webkit-scrollbar {
-  height: 8px;
+   height: 8px;
 }
 
 .saleGrid::-webkit-scrollbar-thumb {
-  background-color: #6c36ff;
-  border-radius: 4px;
+   background-color: #6c36ff;
+   border-radius: 4px;
 }
 
 .saleCard {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  min-width: 180px;
-  max-width: 180px;
-  flex-shrink: 0;
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 15px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   position: relative;
+   min-width: 180px;
+   max-width: 180px;
+   flex-shrink: 0;
 }
 
 .saleCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   transform: translateY(-5px);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .saleBadge {
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  padding: 4px 8px;
-  border-radius: 8px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+   background-color: red;
+   color: white;
+   font-size: 0.8rem;
+   padding: 4px 8px;
+   border-radius: 8px;
+   position: absolute;
+   top: 10px;
+   left: 10px;
 }
 
 .saleImage {
-  width: 100%;
-  height: 140px;
-  object-fit: contain;
-  margin-bottom: 10px;
+   width: 100%;
+   height: 140px;
+   object-fit: contain;
+   margin-bottom: 10px;
 }
 
 .saleTitle {
-  font-size: 0.9rem;
-  margin: 6px 0;
-  color: #555;
+   font-size: 0.9rem;
+   margin: 6px 0;
+   color: #555;
 }
 
 .salePrice {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
+   font-size: 1rem;
+   font-weight: bold;
+   color: #333;
 }
 
 .oldPrice {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 4px;
+   text-decoration: line-through;
+   color: #999;
+   margin-right: 4px;
 }
 
 .viewAllButton1 {
-  background-color: #6c36ff;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
+   background-color: #6c36ff;
+   color: white;
+   padding: 10px 16px;
+   border-radius: 20px;
+   border: none;
+   cursor: pointer;
+   margin-top: 20px;
 }
 
 .viewAllButton1:hover {
-  background-color: #5529c6;
+   background-color: #5529c6;
 }
 
 .promoBanner1 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 40px;
-  margin-top: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #fff;
+   padding: 40px;
+   margin-top: 40px;
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Side - Text */
 .promoContent1 {
-  flex: 1;
-  padding-right: 30px;
-  text-align: left;
+   flex: 1;
+   padding-right: 30px;
+   text-align: left;
 }
 
 .promoContent1 h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+   font-size: 28px;
+   font-weight: bold;
+   color: #333;
+   margin-bottom: 10px;
 }
 
 .promoContent1 h3 {
-  font-size: 40px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 10px;
+   font-size: 40px;
+   font-weight: bold;
+   color: #000;
+   margin-bottom: 10px;
 }
 
 .discount1 {
-  font-size: 48px;
-  color: #673ab7;
-  font-weight: bold;
+   font-size: 48px;
+   color: #673ab7;
+   font-weight: bold;
 }
 
 .promoContent1 p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
+   font-size: 16px;
+   color: #555;
+   margin-bottom: 20px;
 }
 
 .smallText1 {
-  font-size: 14px;
-  color: #777;
+   font-size: 14px;
+   color: #777;
 }
 
 .promoButton1 {
-  background: #673ab7;
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+   background: #673ab7;
+   color: #fff;
+   padding: 12px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
 }
 
 .promoButton1:hover {
-  background: #512da8;
+   background: #512da8;
 }
 
 /* Right Side - Image */
 .promoImageContainer1 {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
+   flex: 1;
+   display: flex;
+   justify-content: flex-end;
+   position: relative;
 }
 
 .promoImage1 {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  object-fit: cover;
+   width: 100%;
+   max-width: 500px;
+   border-radius: 10px;
+   object-fit: cover;
 }
 
 /* "Best Price" Badge */
 .bestPriceBadge1 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff0000;
-  color: #fff;
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 5px;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   background: #ff0000;
+   color: #fff;
+   padding: 8px 12px;
+   font-size: 14px;
+   font-weight: bold;
+   border-radius: 5px;
 }
 
 .brandsSection {
-  width: 100%;
-  max-width: 1200px;
-  margin: 50px auto;
-  text-align: center;
+   width: 100%;
+   max-width: 1200px;
+   margin: 50px auto;
+   text-align: center;
 }
 
 .sectionTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 20px;
 }
 
 .brandsGrid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
 }
 
 .brandCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 100px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 180px;
+   height: 100px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   background-color: #fff;
+   transition: transform 0.3s ease-in-out;
 }
 
 .brandCard:hover {
-  transform: scale(1.05);
+   transform: scale(1.05);
 }
 
 .brandName {
-  font-size: 18px;
-  font-weight: bold;
-  color: #666;
+   font-size: 18px;
+   font-weight: bold;
+   color: #666;
 }
 
 /* Newsletter Section */
 .newsletterSection {
-  background: #442599;
-  padding: 40px;
-  text-align: center;
-  color: white;
-  border-radius: 8px;
-  margin: 20px 0;
-  width: 100%;
+   background: #442599;
+   padding: 40px;
+   text-align: center;
+   color: white;
+   border-radius: 8px;
+   margin: 20px 0;
+   width: 100%;
 }
 
 .newsletterSection h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+   font-size: 1.8rem;
+   margin-bottom: 10px;
 }
 
 .newsletterSection p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+   font-size: 1rem;
+   margin-bottom: 20px;
 }
 
 .newsletterForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   flex-wrap: wrap;
 }
 
 .newsletterInput {
-  width: 300px;
-  padding: 12px;
-  border: none;
-  border-radius: 20px;
-  outline: none;
-  font-size: 1rem;
+   width: 300px;
+   padding: 12px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   font-size: 1rem;
 }
 
 .subscribeButton {
-  background: black;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+   background: black;
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 1rem;
+   transition: background 0.3s ease;
 }
 
 .subscribeButton:hover {
-  background: #444;
+   background: #444;
 }
 
 .newsletterCheckbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 10px;
 }
 
 .newsletterCheckbox input {
-  margin-right: 8px;
+   margin-right: 8px;
 }
-
-
-
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .categoriesGrid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
-  }
+   .categoriesGrid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+   }
 }
 
 @media (max-width: 768px) {
-  .cardsContainer {
-    flex-direction: column;
-    align-items: center;
-  }
+   .cardsContainer {
+      flex-direction: column;
+      align-items: center;
+   }
 
-  .card {
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-  }
+   .card {
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+   }
 
-  .cardContent {
-    max-width: 100%;
-  }
+   .cardContent {
+      max-width: 100%;
+   }
 
-  .cardImage {
-    position: static;
-    width: 100px;
-    margin-top: 15px;
-  }
+   .cardImage {
+      position: static;
+      width: 100px;
+      margin-top: 15px;
+   }
 
-  .featuresContainer {
-    flex-direction: column;
-    text-align: center;
-  }
+   .featuresContainer {
+      flex-direction: column;
+      text-align: center;
+   }
 
-  .featureItem {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-  }
+   .featureItem {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+   }
 
-  .carousel {
-    flex-direction: column;
-    align-items: center;
-  }
+   .carousel {
+      flex-direction: column;
+      align-items: center;
+   }
 
-  .productCard {
-    width: 90%;
-    max-width: 300px;
-  }
+   .productCard {
+      width: 90%;
+      max-width: 300px;
+   }
 
-  .categoriesGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-  }
+   .categoriesGrid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+   }
 }
 
 @media (max-width: 480px) {
-  .categoriesGrid {
-    grid-template-columns: repeat(1, 1fr); /* 1 column on very small screens */
-  }
+   .categoriesGrid {
+      grid-template-columns: repeat(
+         1,
+         1fr
+      ); /* 1 column on very small screens */
+   }
 
-  .promoBanner {
-    flex-direction: column;
-    text-align: center;
-  }
+   .promoBanner {
+      flex-direction: column;
+      text-align: center;
+   }
 
-  .promoImageContainer {
-    width: 100%;
-  }
+   .promoImageContainer {
+      width: 100%;
+   }
 
-  .promoContent {
-    max-width: 100%;
-    padding-left: 0;
-    margin-top: 20px;
-  }
+   .promoContent {
+      max-width: 100%;
+      padding-left: 0;
+      margin-top: 20px;
+   }
 
-  .bestPriceBadge {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
+   .bestPriceBadge {
+      font-size: 12px;
+      padding: 6px 10px;
+   }
 }
 /* Mobile Styles (Phones & Small Tablets) */
 @media (max-width: 768px) {
-  .hero {
-    height: 60vh; /* Reduce height for mobile */
-    padding: 20px;
-  }
+   .hero {
+      height: 60vh; /* Reduce height for mobile */
+      padding: 20px;
+   }
 
-  .content h1 {
-    font-size: 28px; /* Decrease heading size */
-  }
+   .content h1 {
+      font-size: 28px; /* Decrease heading size */
+   }
 
-  .content p {
-    font-size: 16px;
-  }
+   .content p {
+      font-size: 16px;
+   }
 
-  .shopButton {
-    padding: 10px 16px;
-    font-size: 14px;
-  }
+   .shopButton {
+      padding: 10px 16px;
+      font-size: 14px;
+   }
 
-  .cardsContainer {
-    flex-direction: column; /* Stack cards */
-    align-items: center;
-  }
+   .cardsContainer {
+      flex-direction: column; /* Stack cards */
+      align-items: center;
+   }
 
-  .card {
-    width: 90%; /* Full width */
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+   .card {
+      width: 90%; /* Full width */
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+   }
 
-  .cardImage {
-    position: static;
-    width: 100%;
-    height: auto;
-    margin-top: 15px;
-  }
+   .cardImage {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-top: 15px;
+   }
 
-  .featuresContainer {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+   .featuresContainer {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+   }
 
-  .featureItem {
-    flex-direction: column;
-  }
+   .featureItem {
+      flex-direction: column;
+   }
 
-  .carousel {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
+   .carousel {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+   }
 
-  .categoriesGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 5 */
-  }
+   .categoriesGrid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 5 */
+   }
 
-  .promoBanner {
-    flex-direction: column;
-    text-align: center;
-  }
+   .promoBanner {
+      flex-direction: column;
+      text-align: center;
+   }
 
-  .promoImageContainer,
-  .promoContent {
-    width: 100%;
-    padding: 10px;
-  }
+   .promoImageContainer,
+   .promoContent {
+      width: 100%;
+      padding: 10px;
+   }
 
-  .saleGrid {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
+   .saleGrid {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+   }
 
-  .brandsGrid {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+   .brandsGrid {
+      flex-wrap: wrap;
+      justify-content: center;
+   }
 
-  .newsletterForm {
-    flex-direction: column;
-  }
+   .newsletterForm {
+      flex-direction: column;
+   }
 
-  .newsletterInput {
-    width: 100%;
-  }
+   .newsletterInput {
+      width: 100%;
+   }
 }
 @media (max-width: 480px) {
-  .hero {
-    height: 50vh;
-  }
+   .hero {
+      height: 50vh;
+   }
 
-  .content h1 {
-    font-size: 24px;
-  }
+   .content h1 {
+      font-size: 24px;
+   }
 
-  .cardsContainer {
-    width: 100%;
-  }
+   .cardsContainer {
+      width: 100%;
+   }
 
-  .categoryCard {
-    padding: 10px;
-  }
+   .categoryCard {
+      padding: 10px;
+   }
 
-  .promoBanner {
-    padding: 20px;
-  }
+   .promoBanner {
+      padding: 20px;
+   }
 
-  .promoContent h2 {
-    font-size: 20px;
-  }
+   .promoContent h2 {
+      font-size: 20px;
+   }
 
-  .promoButton {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
+   .promoButton {
+      padding: 8px 14px;
+      font-size: 14px;
+   }
 
-  .viewAllButton {
-    padding: 10px;
-    font-size: 14px;
-  }
+   .viewAllButton {
+      padding: 10px;
+      font-size: 14px;
+   }
+}
+/* Mobile Styles (Tablets & Phones) */
+@media (max-width: 768px) {
+   .onSaleSection {
+      margin: 30px 0;
+      padding: 10px;
+   }
+
+   .sectionTitle {
+      font-size: 1.8rem; /* Decrease font size */
+   }
+
+   .saleGrid {
+      gap: 8px;
+      padding: 8px;
+   }
+
+   .saleCard {
+      min-width: 160px; /* Slightly smaller */
+      max-width: 160px;
+      padding: 12px;
+   }
+
+   .saleBadge {
+      font-size: 0.7rem;
+      padding: 3px 6px;
+   }
+
+   .saleImage {
+      height: 120px; /* Adjust image size */
+   }
+
+   .saleTitle {
+      font-size: 0.85rem;
+   }
+
+   .salePrice {
+      font-size: 0.95rem;
+   }
+
+   .viewAllButton1 {
+      padding: 8px 14px;
+      font-size: 14px;
+   }
+}
+
+/* Extra Small Screens (Phones < 480px) */
+@media (max-width: 480px) {
+   .sectionTitle {
+      font-size: 1.6rem;
+   }
+
+   .saleGrid {
+      gap: 5px;
+   }
+
+   .saleCard {
+      min-width: 140px;
+      max-width: 140px;
+      padding: 10px;
+   }
+
+   .saleImage {
+      height: 100px;
+   }
+
+   .saleTitle {
+      font-size: 0.8rem;
+   }
+
+   .salePrice {
+      font-size: 0.9rem;
+   }
+
+   .viewAllButton1 {
+      width: 100%; /* Make button full-width */
+   }
 }
