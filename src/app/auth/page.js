@@ -1,81 +1,161 @@
-"use client"; 
-import { useState } from 'react';
-import styles from '@/styles/AuthForm.module.css';
+"use client";
+import { useState } from "react";
+import styles from "@/styles/AuthForm.module.css";
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
-  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({ username: "", email: "", password: "" });
+  const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear errors on change
   };
 
-  const handleSubmit = async (e) => {
+  // Validate inputs
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.username && !isLogin) newErrors.username = "Username is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Register user
+  const registerUser = () => {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check if email is already registered
+    const existingUser = users.find((user) => user.email === formData.email);
+    if (existingUser) {
+      setMessage("Email already registered! Please login.");
+      return;
+    }
+
+    // Save new user
+    const newUser = { username: formData.username, email: formData.email, password: formData.password };
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+
+    setMessage("Registration successful! Please log in.");
+    setIsLogin(true); // Switch to login mode
+  };
+
+  // Login user
+  const loginUser = () => {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Find user by email & password
+    const user = users.find((user) => user.email === formData.email && user.password === formData.password);
+
+    if (!user) {
+      setMessage("Invalid email or password. Please try again.");
+      return;
+    }
+
+    // Save session
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    setMessage("Login successful!");
+
+    // Show popup for 3 seconds
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage('');
+    setMessage("");
 
-    const requestBody = {
-      type: isLogin ? 'login' : 'register',
-      username: formData.username,
-      email: formData.email,
-      password: formData.password
-    };
+    if (!validate()) return;
 
-    try {
-      const response = await fetch('/api/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody)
-      });
-
-      const data = await response.json();
-      setMessage(data.message);
-
-      if (response.ok) {
-        alert(isLogin ? 'Login successful!' : 'Registration successful!');
-      }
-    } catch (error) {
-      setMessage('Something went wrong. Please try again.');
+    if (isLogin) {
+      loginUser();
+    } else {
+      registerUser();
     }
   };
 
   return (
     <div className={`${styles.authContainer} ${isLogin ? styles.loginMode : styles.registerMode}`}>
       <div className={styles.authBox}>
-        {/* Welcome Section (No Toggle Button Here) */}
         <div className={styles.welcomeSection}>
-          <h2>{isLogin ? 'Hello, Welcome!' : 'Welcome Back!'}</h2>
+          <h2>{isLogin ? "Hello, Welcome!" : "Welcome Back!"}</h2>
           <p>{isLogin ? "Don't have an account?" : "Already have an account?"}</p>
         </div>
 
-        {/* Form Section */}
         <div className={styles.formSection}>
-          <h2>{isLogin ? 'Login' : 'Registration'}</h2>
+          <h2>{isLogin ? "Login" : "Registration"}</h2>
           {message && <p className={styles.message}>{message}</p>}
           <form onSubmit={handleSubmit}>
-            <input className={styles.inputField} type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
-            {!isLogin && <input className={styles.inputField} type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />}
-            <input className={styles.inputField} type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-            <button className={styles.primaryButton} type="submit">{isLogin ? 'Login' : 'Register'}</button>
+            {!isLogin && (
+              <>
+                <input
+                  className={styles.inputField}
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                />
+                {errors.username && <p className={styles.error}>{errors.username}</p>}
+              </>
+            )}
+
+            <input
+              className={styles.inputField}
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
+
+            <input
+              className={styles.inputField}
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            {errors.password && <p className={styles.error}>{errors.password}</p>}
+
+            <button className={styles.primaryButton} type="submit">
+              {isLogin ? "Login" : "Register"}
+            </button>
           </form>
-          <div className={styles.socialLogin}>
-            <p>or {isLogin ? 'login' : 'register'} with social platforms</p>
-            <div className={styles.socialIcons}>
-              <button className={styles.socialButton}>G</button>
-              <button className={styles.socialButton}>F</button>
-              <button className={styles.socialButton}>Git</button>
-              <button className={styles.socialButton}>In</button>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Separate Toggle Buttons Below */}
       <div className={styles.switchButtons}>
-        <button className={`${styles.switchButton} ${isLogin ? styles.active : ''}`} onClick={() => setIsLogin(true)}>Login</button>
-        <button className={`${styles.switchButton} ${!isLogin ? styles.active : ''}`} onClick={() => setIsLogin(false)}>Register</button>
+        <button className={`${styles.switchButton} ${isLogin ? styles.active : ""}`} onClick={() => setIsLogin(true)}>
+          Login
+        </button>
+        <button className={`${styles.switchButton} ${!isLogin ? styles.active : ""}`} onClick={() => setIsLogin(false)}>
+          Register
+        </button>
       </div>
+
+      {/* Centered Popup after Login */}
+      {showPopup && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <h3>🎉 Login Successful!</h3>
+            <p>Welcome back, {formData.email}!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
