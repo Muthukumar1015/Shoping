@@ -25,7 +25,8 @@
 }
 
 /* Panels */
-.welcomeSection, .formSection {
+.welcomeSection,
+.formSection {
   width: 50%;
   padding: 40px;
   display: flex;
@@ -134,79 +135,27 @@
   color: white;
 }
 
-/* 📱 Mobile Responsive Fix */
+/* 📱 Mobile View - Only Show Inputs */
 @media (max-width: 768px) {
   .authBox {
     flex-direction: column;
     width: 90%;
     height: auto;
-    min-height: 500px;
+    min-height: 400px;
   }
 
-  .welcomeSection, .formSection {
+  .welcomeSection {
+    display: none; /* Hide Welcome Section on Mobile */
+  }
+
+  .formSection {
     width: 100%;
     padding: 30px;
   }
 
-  /* Fix Sliding Effect */
-  .loginMode .welcomeSection {
-    transform: translateY(0%);
-  }
-  .loginMode .formSection {
-    transform: translateY(0%);
-  }
-  .registerMode .welcomeSection {
-    transform: translateY(-100%);
-  }
+  /* Remove Sliding Effect on Mobile */
+  .loginMode .formSection,
   .registerMode .formSection {
-    transform: translateY(100%);
-  }
-
-  .inputField {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .primaryButton, .switchButton {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
-
-/* 📱 Small Mobile (≤ 480px) */
-@media (max-width: 480px) {
-  .authBox {
-    width: 100%;
-    height: 100%;
-    min-height: 550px;
-  }
-
-  .welcomeSection, .formSection {
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* Adjust sliding effect */
-  .loginMode .welcomeSection {
-    transform: translateY(0%);
-  }
-  .loginMode .formSection {
-    transform: translateY(0%);
-  }
-  .registerMode .welcomeSection {
-    transform: translateY(-100%);
-  }
-  .registerMode .formSection {
-    transform: translateY(100%);
-  }
-
-  .inputField {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .primaryButton, .switchButton {
-    font-size: 14px;
-    padding: 8px;
+    transform: translateX(0%);
   }
 }
