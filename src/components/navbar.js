@@ -5,24 +5,23 @@ import { useRouter } from "next/navigation";
 import {
    FaTruck,
    FaUserCircle,
-   FaHeart,
    FaShoppingBag,
    FaSearch,
    FaBars,
 } from "react-icons/fa";
-import { useCart } from "@/app/context/CartContext"; // ✅ Import Cart Context
-import CartSidebar from "@/components/CartSidebar"; // ✅ Import Cart Sidebar
+import { useCart } from "@/app/context/CartContext";
+import CartSidebar from "@/components/CartSidebar";
 import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
    const [search, setSearch] = useState("");
    const [menuOpen, setMenuOpen] = useState(false);
-   const { cart, isCartOpen, setIsCartOpen } = useCart(); // ✅ Use Cart Context
+   const { cart, isCartOpen, setIsCartOpen } = useCart();
    const router = useRouter();
 
    return (
       <nav className={styles.navbar}>
-         {/* Top Bar */}
+         {/* 🔹 Top Bar */}
          <div className={styles.topBar}>
             <span className={styles.shipping}>
                <FaTruck /> Free Shipping for orders over $50
@@ -32,61 +31,65 @@ export default function Navbar() {
                <Link href="#">Contact</Link>
                <Link href="#">Help Center</Link>
                <span>
-                  Call Us <a href="tel:1234567890">123-456-7890</a>
+                  Call Us <a href="tel:1234567890">8148835997</a>
                </span>
             </div>
          </div>
 
-         {/* Main Navbar */}
+         {/* 🔹 Main Navbar */}
          <div className={styles.mainNav}>
-            <div className={styles.logoMenuContainer}>
-               <h1 className={styles.logo}>Mk Shop</h1>
-               <button
-                  className={styles.menuButton}
-                  onClick={() => setMenuOpen(!menuOpen)}
-               >
-                  <FaBars />
-               </button>
-            </div>
+            {/* ☰ Menu Button (Left Corner) */}
+            <button
+               className={styles.menuButton}
+               onClick={() => setMenuOpen(!menuOpen)}
+            >
+               <FaBars />
+            </button>
 
-            {/* Search Bar */}
-            <div className={styles.searchBarContainer}>
-               <input
-                  type="text"
-                  placeholder="Search..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  className={styles.searchInput}
-               />
-               <button className={styles.searchButton}>
-                  <FaSearch />
-               </button>
-            </div>
+            {/* Logo (Centered) */}
+            <h1 className={styles.logo}>Mk Shop</h1>
 
-            {/* Icons */}
-            <div className={styles.icons}>
-               {/* Clicking Log In redirects to /auth */}
-               <button
-                  className={styles.loginButton}
-                  onClick={() => router.push("/auth")}
-               >
-                  <FaUserCircle /> Log In
-               </button>
+            {/* 🔹 Search Bar & Icons (Right Side) */}
+            <div className={styles.searchIconsContainer}>
+               {/* 🔎 Search Bar */}
+               <div className={styles.searchBarContainer}>
+                  <input
+                     type="text"
+                     placeholder="Search..."
+                     value={search}
+                     onChange={(e) => setSearch(e.target.value)}
+                     className={styles.searchInput}
+                  />
+                  <button className={styles.searchButton}>
+                     <FaSearch />
+                  </button>
+               </div>
 
-               {/* ✅ Cart Icon: Click to open cart sidebar */}
-               <button
-                  className={styles.cartIcon}
-                  onClick={() => setIsCartOpen(true)}
-               >
-                  <FaShoppingBag />
-                  {cart.length > 0 && (
-                     <span className={styles.cartCount}>{cart.length}</span>
-                  )}
-               </button>
+               {/* 🛒 Icons */}
+               <div className={styles.icons}>
+                  {/* 👤 Log In */}
+                  <button
+                     className={styles.loginButton}
+                     onClick={() => router.push("/auth")}
+                  >
+                     <FaUserCircle />
+                  </button>
+
+                  {/* 🛍️ Cart */}
+                  <button
+                     className={styles.cartIcon}
+                     onClick={() => setIsCartOpen(true)}
+                  >
+                     <FaShoppingBag />
+                     {cart.length > 0 && (
+                        <span className={styles.cartCount}>{cart.length}</span>
+                     )}
+                  </button>
+               </div>
             </div>
          </div>
 
-         {/* Categories (Mobile Toggle) */}
+         {/* 🔹 Categories (Mobile Dropdown) */}
          {menuOpen && (
             <div className={styles.categoriesMobile}>
                {[
@@ -107,7 +110,7 @@ export default function Navbar() {
             </div>
          )}
 
-         {/* Categories (Desktop View) */}
+         {/* 🔹 Categories (Desktop) */}
          <div className={styles.categoriesDesktop}>
             {[
                "Shop All",
@@ -127,10 +130,7 @@ export default function Navbar() {
          </div>
 
          {/* ✅ Cart Sidebar */}
-         <CartSidebar
-            isOpen={isCartOpen}
-            onClose={() => setIsCartOpen(false)}
-         />
+         <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       </nav>
    );
 }
