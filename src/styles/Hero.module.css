@@ -740,3 +740,125 @@
     padding: 6px 10px;
   }
 }
+/* Mobile Styles (Phones & Small Tablets) */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh; /* Reduce height for mobile */
+    padding: 20px;
+  }
+
+  .content h1 {
+    font-size: 28px; /* Decrease heading size */
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .shopButton {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .cardsContainer {
+    flex-direction: column; /* Stack cards */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* Full width */
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cardImage {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .featuresContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .featureItem {
+    flex-direction: column;
+  }
+
+  .carousel {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 5 */
+  }
+
+  .promoBanner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .promoImageContainer,
+  .promoContent {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .saleGrid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .brandsGrid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterInput {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .cardsContainer {
+    width: 100%;
+  }
+
+  .categoryCard {
+    padding: 10px;
+  }
+
+  .promoBanner {
+    padding: 20px;
+  }
+
+  .promoContent h2 {
+    font-size: 20px;
+  }
+
+  .promoButton {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .viewAllButton {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
