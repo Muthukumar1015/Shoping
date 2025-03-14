@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { useCart } from "@/app/context/CartContext";
 import styles from "@/styles/cartSidebar.module.css";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // ✅ Use Next.js router
 
 export default function CartSidebar() {
   const { cart, isCartOpen, setIsCartOpen, updateQuantity, removeFromCart } = useCart();
   const [showPopup, setShowPopup] = useState(false);
-  const [viewCartPopup, setViewCartPopup] = useState(false); // ✅ View Cart Popup State
+  const [cartMessage, setCartMessage] = useState(false); // ✅ State for View Cart message
   const router = useRouter();
 
   const getTotalPrice = () => {
@@ -52,19 +52,20 @@ export default function CartSidebar() {
           <p className={styles.totalPrice}>Subtotal: <strong>${getTotalPrice().toFixed(2)}</strong></p>
           <p className={styles.taxNote}>Taxes and shipping are calculated at checkout.</p>
 
+          {/* ✅ Show message when clicking View Cart */}
+          {cartMessage && <p className={styles.cartMessage}>This is View Cart...</p>}
+
           {/* ✅ Checkout Button - Shows Popup */}
           <button className={styles.checkoutButton} onClick={() => setShowPopup(true)}>Checkout</button>
 
-          {/* ✅ View Cart Button - Shows Popup for 3s */}
+          {/* ✅ View Cart Button - Shows message & then navigates */}
           <button 
-            className={styles.viewCartButton} 
-            onClick={() => {
-              setViewCartPopup(true); // Show popup
-              setTimeout(() => setViewCartPopup(false), 3000); // Hide after 3s
-            }}
-          >
-            View Cart
-          </button>
+  className={styles.viewCartButton} 
+  onClick={() => alert("This is your View Cart")}
+>
+  View Cart
+</button>
+
         </div>
       )}
 
@@ -78,13 +79,6 @@ export default function CartSidebar() {
             <p>We will notify you when online orders are available.</p>
             <button className={styles.modalButton} onClick={() => setShowPopup(false)}>Got it</button>
           </div>
-        </div>
-      )}
-
-      {/* ✅ View Cart Popup */}
-      {viewCartPopup && (
-        <div className={styles.viewCartPopup}>
-          <p>This is your View Cart</p>
         </div>
       )}
     </div>
