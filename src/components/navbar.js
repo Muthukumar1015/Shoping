@@ -31,7 +31,7 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className={styles.mainNav}>
         <div className={styles.logoMenuContainer}>
-          <h1 className={styles.logo}>Mk Shopp</h1>
+          <h1 className={styles.logo}>Mk Shop</h1>
           <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
             <FaBars />
           </button>
