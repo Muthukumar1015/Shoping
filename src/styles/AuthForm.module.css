@@ -132,7 +132,7 @@
   color: white;
 }
 
-/* 📱 Mobile (<= 768px) */
+/* 📱 Mobile (≤ 768px) */
 @media (max-width: 768px) {
   .authBox {
     flex-direction: column;
@@ -158,7 +158,7 @@
   }
 }
 
-/* 📱 Small Mobile (<= 480px) */
+/* 📱 Small Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .authBox {
     width: 100%;
