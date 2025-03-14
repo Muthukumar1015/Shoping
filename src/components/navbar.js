@@ -3,13 +3,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaTruck, FaUserCircle, FaHeart, FaShoppingBag, FaSearch, FaBars } from "react-icons/fa";
+import { useCart } from "@/app/context/CartContext"; // ✅ Import Cart Context
+import CartSidebar from "@/components/CartSidebar"; // ✅ Import Cart Sidebar
 import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cart, isCartOpen, setIsCartOpen } = useCart(); // ✅ Use Cart Context
   const router = useRouter();
-
 
   return (
     <nav className={styles.navbar}>
@@ -52,14 +54,16 @@ export default function Navbar() {
         <div className={styles.icons}>
           {/* Clicking Log In redirects to /auth */}
           <button className={styles.loginButton} onClick={() => router.push("/auth")}>
-  <FaUserCircle /> Log In
-</button>
+            <FaUserCircle /> Log In
+          </button>
 
-          <Link href="#"><FaHeart /></Link>
-          <Link href="#" className={styles.cartIcon}>
+        
+
+          {/* ✅ Cart Icon: Click to open cart sidebar */}
+          <button className={styles.cartIcon} onClick={() => setIsCartOpen(true)}>
             <FaShoppingBag />
-            <span className={styles.cartCount}>0</span>
-          </Link>
+            {cart.length > 0 && <span className={styles.cartCount}>{cart.length}</span>}
+          </button>
         </div>
       </div>
 
@@ -78,6 +82,9 @@ export default function Navbar() {
           <Link key={index} href="/shop" className={styles.categoryItem}>{item}</Link>
         ))}
       </div>
+
+      {/* ✅ Cart Sidebar */}
+      <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </nav>
   );
 }

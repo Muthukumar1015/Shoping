@@ -41,18 +41,19 @@
   padding: 15px 50px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Logo and Menu Button */
+/* Logo & Menu Button */
 .logoMenuContainer {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hamburger Menu Button */
 .menuButton {
   background: transparent;
   border: none;
@@ -105,6 +106,7 @@
   font-size: 14px;
 }
 
+/* Cart Icon */
 .cartIcon {
   position: relative;
 }
@@ -135,7 +137,7 @@
 
 .categoriesMobile {
   background: #f5f5f5;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 10px;
   padding: 10px;
@@ -151,9 +153,7 @@
   text-decoration: underline;
 }
 
-
-
-/* Responsive Design for All Devices */
+/* 💻 Tablet (<= 1024px) */
 @media (max-width: 1024px) {
   .mainNav {
     flex-direction: column;
@@ -171,30 +171,48 @@
     display: block;
   }
   .icons {
-    display: none;
+    gap: 10px;
   }
 }
 
+/* 📱 Mobile (<= 768px) */
 @media (max-width: 768px) {
+  .mainNav {
+    padding: 12px 20px;
+  }
+  .logo {
+    font-size: 22px;
+  }
+  .searchBar input {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+  .icons {
+    gap: 15px;
+  }
+  .categoriesMobile {
+    display: flex;
+  }
+}
+
+/* 📱 Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .mainNav {
+    padding: 10px 15px;
+  }
   .logo {
     font-size: 20px;
   }
   .searchBar input {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .mainNav {
-    padding: 8px 15px;
-  }
-  .logo {
-    font-size: 18px;
-  }
-  .searchBar input {
     font-size: 12px;
+    padding: 6px 8px;
   }
   .categoryItem {
     font-size: 12px;
+  }
+  .cartCount {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 }

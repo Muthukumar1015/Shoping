@@ -3,15 +3,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { useCart } from "@/app/context/CartContext"; // ✅ Import Cart Context
 import styles from "@/styles/product.module.css";
 import { products } from "@/app/data/products";
 
 export default function ProductPage() {
   const params = useParams();
+  const { addToCart } = useCart(); // ✅ Get addToCart function
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  const [orderAvailable, setOrderAvailable] = useState(false); // ✅ Simulate online order availability
+  const [orderAvailable, setOrderAvailable] = useState(false);
   const [cartMessage, setCartMessage] = useState("");
 
   useEffect(() => {
@@ -21,12 +23,20 @@ export default function ProductPage() {
     }
   }, [params]);
 
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product, quantity);
+      setCartMessage("Added to cart!");
+      setTimeout(() => setCartMessage(""), 3000); // Hide message after 3s
+    }
+  };
+
   const handleBuyNow = () => {
     if (!orderAvailable) {
-      setShowModal(true); // ✅ Show modal if orders are unavailable
+      setShowModal(true);
     } else {
       setCartMessage("We will inform you when online orders are available.");
-      setTimeout(() => setCartMessage(""), 3000); // ✅ Hide message after 3s
+      setTimeout(() => setCartMessage(""), 3000);
     }
   };
 
@@ -70,10 +80,12 @@ export default function ProductPage() {
 
           {/* Buttons */}
           <div className={styles.buttonGroup}>
-            <button className={styles.addToCart} onClick={() => setCartMessage("Added to cart!")}>
+            <button className={styles.addToCart} onClick={handleAddToCart}>
               Add to Cart
             </button>
-            <button className={styles.buyNow} onClick={handleBuyNow}>Buy Now</button> {/* ✅ Handles Buy Now */}
+            <button className={styles.buyNow} onClick={handleBuyNow}>
+              Buy Now
+            </button>
           </div>
 
           {/* ✅ Show Cart Message */}
@@ -88,7 +100,7 @@ export default function ProductPage() {
             <button className={styles.closeModal} onClick={() => setShowModal(false)}>✖</button>
             <h2>We can't accept online orders right now</h2>
             <p>Please contact us to complete your purchase.</p>
-            <p>Make it add to cart,We will Notife When Online Order Available</p>
+            <p>We will notify you when online orders are available.</p>
             <button className={styles.modalButton} onClick={() => setShowModal(false)}>Got it</button>
           </div>
         </div>
