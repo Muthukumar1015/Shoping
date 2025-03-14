@@ -10,10 +10,10 @@ export default function Footer() {
             {/* Store Location */}
             <div className={styles.column}>
                <h3>Store Location</h3>
-               <p>500 Terry Francine Street</p>
-               <p>San Francisco, CA 94158</p>
-               <p>info@mysite.com</p>
-               <p>123-456-7890</p>
+               <p>Market Street</p>
+               <p>Ariyalur, Tn</p>
+               <p>https://shoping-puce.vercel.app/</p>
+               <p>81148835997</p>
                <div className={styles.socialIcons}>
                   <FaFacebookF />
                   <FaInstagram />
