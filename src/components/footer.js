@@ -13,7 +13,7 @@ export default function Footer() {
                <p>Market Street</p>
                <p>Ariyalur, Tn</p>
                <p>https://shoping-puce.vercel.app/</p>
-               <p>81148835997</p>
+               <p>8148835997</p>
                <div className={styles.socialIcons}>
                   <FaFacebookF />
                   <FaInstagram />
